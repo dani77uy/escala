@@ -2,11 +2,11 @@ package org.grupomontevideo.escala.posgradopostulaciones.controller;
 
 import java.sql.Date;
 
-import org.grupomontevideo.escala.posgradopostulaciones.controller.postulacion.PostulacionController;
-import org.grupomontevideo.escala.posgradopostulaciones.model.entity.EstadoPostulacion;
-import org.grupomontevideo.escala.posgradopostulaciones.model.entity.Postulacion;
-import org.grupomontevideo.escala.posgradopostulaciones.model.enums.EnumEstadoPostulacion;
-import org.grupomontevideo.escala.posgradopostulaciones.persistence.PostulacionDao;
+import org.grupomontevideo.escala.posgrado.controller.postulacion.PostulacionController;
+import org.grupomontevideo.escala.posgrado.model.entity.EstadoPostulacion;
+import org.grupomontevideo.escala.posgrado.model.entity.Postulacion;
+import org.grupomontevideo.escala.posgrado.model.enums.EnumEstadoPostulacion;
+import org.grupomontevideo.escala.posgrado.persistence.PostulacionDao;
 import org.hibernate.Session;
 import org.testng.annotations.Test;
 

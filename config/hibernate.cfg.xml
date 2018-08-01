@@ -14,19 +14,19 @@
         <property name="show_sql">true</property>
         <property name="hibernate.id.new_generator_mappings">false</property>
 
-        <mapping class="org.grupomontevideo.escala.posgradopostulaciones.model.entity.AreaDisciplinar"/>
-        <mapping class="org.grupomontevideo.escala.posgradopostulaciones.model.entity.Maestria"/>
-        <mapping class="org.grupomontevideo.escala.posgradopostulaciones.model.entity.Universidad"/>
-        <mapping class="org.grupomontevideo.escala.posgradopostulaciones.model.entity.EstadoPostulacion"/>
-        <mapping class="org.grupomontevideo.escala.posgradopostulaciones.model.entity.PrioriodadesDePais"/>
-        <mapping class="org.grupomontevideo.escala.posgradopostulaciones.model.entity.Universidad"/>
-        <mapping class="org.grupomontevideo.escala.posgradopostulaciones.model.entity.WordpressUser"/>
-        <mapping class="org.grupomontevideo.escala.posgradopostulaciones.model.entity.Postulacion"/>
-        <mapping class="org.grupomontevideo.escala.posgradopostulaciones.model.entity.Convocatoria"/>
-        <mapping class="org.grupomontevideo.escala.posgradopostulaciones.model.entity.LogPostulaciones"/>
-        <mapping class="org.grupomontevideo.escala.posgradopostulaciones.model.entity.WordpressCoordinadorMetaData"/>
-        <mapping class="org.grupomontevideo.escala.posgradopostulaciones.model.entity.WorpressRol"/>
-        <mapping class="org.grupomontevideo.escala.posgradopostulaciones.model.entity.WordpressUserRol"/>
+        <mapping class="org.grupomontevideo.escala.posgrado.model.entity.AreaDisciplinar"/>
+        <mapping class="org.grupomontevideo.escala.posgrado.model.entity.Maestria"/>
+        <mapping class="org.grupomontevideo.escala.posgrado.model.entity.Universidad"/>
+        <mapping class="org.grupomontevideo.escala.posgrado.model.entity.EstadoPostulacion"/>
+        <mapping class="org.grupomontevideo.escala.posgrado.model.entity.PrioriodadesDePais"/>
+        <mapping class="org.grupomontevideo.escala.posgrado.model.entity.Universidad"/>
+        <mapping class="org.grupomontevideo.escala.posgrado.model.entity.WordpressUser"/>
+        <mapping class="org.grupomontevideo.escala.posgrado.model.entity.Postulacion"/>
+        <mapping class="org.grupomontevideo.escala.posgrado.model.entity.Convocatoria"/>
+        <mapping class="org.grupomontevideo.escala.posgrado.model.entity.LogPostulaciones"/>
+        <mapping class="org.grupomontevideo.escala.posgrado.model.entity.WordpressCoordinadorMetaData"/>
+        <mapping class="org.grupomontevideo.escala.posgrado.model.entity.WorpressRol"/>
+        <mapping class="org.grupomontevideo.escala.posgrado.model.entity.WordpressUserRol"/>
 
     </session-factory>
 
