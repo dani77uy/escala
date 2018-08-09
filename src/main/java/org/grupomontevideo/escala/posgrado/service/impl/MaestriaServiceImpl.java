@@ -27,7 +27,7 @@ public class MaestriaServiceImpl implements MaestriaService {
 
    @Override
    public Maestria get(Integer integer) {
-      Optional<Maestria> optional = dao.findById(integer);
+      final Optional<Maestria> optional = dao.findById(integer);
       return optional.orElse(null);
    }
 

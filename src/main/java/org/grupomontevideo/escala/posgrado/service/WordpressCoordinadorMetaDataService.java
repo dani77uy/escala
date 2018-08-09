@@ -10,5 +10,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface WordpressCoordinadorMetaDataService {
 
-   WordpressCoordinadorMetaData obtenerMetaDataPorUsuario(Long userId, String univId);
+   WordpressCoordinadorMetaData obtenerMetaDataPorUsuario(Long userId, Integer univId);
 }

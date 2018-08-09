@@ -1,25 +1,11 @@
 package org.grupomontevideo.escala.posgrado.persistence;
 
-import java.util.Collection;
-
 import org.grupomontevideo.escala.posgrado.model.entity.Convocatoria;
-import org.hibernate.Session;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  * Created by Daniel B. on 22/07/2016.
  */
-public class ConvocatoriaDao extends AbstractDao<Convocatoria, Integer> {
+public interface ConvocatoriaDao extends CrudRepository<Convocatoria, Integer> {
 
-   public ConvocatoriaDao(Session session) {
-      super(session);
-   }
-
-   public Collection<Convocatoria> getAll() {
-      return super.getAll(Convocatoria.class);
-   }
-
-   @Override
-   protected boolean remove(Convocatoria convocatoria) {
-      return false;
-   }
 }
