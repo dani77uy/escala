@@ -1,4 +1,4 @@
-package org.grupomontevideo.escala.docente.controller;
+package org.grupomontevideo.escala.controller;
 
 import java.util.Map;
 
