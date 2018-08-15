@@ -19,12 +19,8 @@ import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactor
 import org.springframework.boot.web.servlet.error.ErrorAttributes;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @SpringBootApplication
-
 public class Main {
 
    private static final Logger LOG = LoggerFactory.getLogger(Main.class);
@@ -37,21 +33,21 @@ public class Main {
    private static final String HOST_GM = "http://grupomontevideo.org";
 
    public static void main(String[] args) {
-      LOG.info("Iniciando aplicación de ESCALA POSGRADO");
+      LOG.info("Iniciando aplicación de ESCALA");
       SpringApplication.run(Main.class, args);
    }
 
-   @Bean
-   public WebMvcConfigurer corsConfigurer() {
-      return new WebMvcConfigurerAdapter() {
+   /*  @Bean
+     public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurerAdapter() {
 
-         @Override
-         public void addCorsMappings(CorsRegistry registry) {
-         }
-      };
-   }
-
-   @Bean
+           @Override
+           public void addCorsMappings(CorsRegistry registry) {
+           }
+        };
+     }
+  */
+ /*  @Bean
    @Primary
    @ConfigurationProperties(prefix = "spring.datasource")
    public DataSource primaryDataSource() throws ExecutionException {
@@ -62,7 +58,7 @@ public class Main {
             .username(dataSourceProperties.getUsername())
             .password(dataSourceProperties.getPassword())
             .build();
-   }
+   }*/
 
    @Bean
    public TomcatServletWebServerFactory containerFactory() {
@@ -90,20 +86,19 @@ public class Main {
    private static final class DataSourceProperties {
 
       public String getUrl() throws ExecutionException {
-         return PropertiesCache.INSTANCE.getMainProperty("mysql.url");
+         return PropertiesCache.INSTANCE.getMySQLProperty("mysql.url");
       }
 
       public String getUsername() throws ExecutionException {
-         return PropertiesCache.INSTANCE.getMainProperty("mysql.username");
+         return PropertiesCache.INSTANCE.getMySQLProperty("mysql.username");
       }
 
       public String getPassword() throws ExecutionException {
-         return PropertiesCache.INSTANCE.getMainProperty("mysql.password");
+         return PropertiesCache.INSTANCE.getMySQLProperty("mysql.password");
       }
 
-      public String getDriverClassName() throws ExecutionException {
-         return PropertiesCache.INSTANCE.getMainProperty("mysql.driver-class-name");
-      }
+      /*public String getDriverClassName() throws ExecutionException {
+         return PropertiesCache.INSTANCE.getMySQLProperty("mysql.driver-class-name");
+      }*/
    }
-
 }

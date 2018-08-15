@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>POSTULACION</title>
+</head>
+<body>
+<!-- Include _menu.html -->
+<th:block th:include="/_menu"></th:block>
+<h1>POSTULACION</h1>
+<select th:field="*{identificador}">
+  <option value=""> -- </option>
+  <option th:each="pais : ${paises}"
+          th:value="${pais.identificador}"
+          th:utext="${pais.nombre}"/>
+</select>
+<th:block th:include="/_footer"></th:block>
+</body>

@@ -1,6 +1,7 @@
 package org.grupomontevideo.escala.model;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,5 +15,6 @@ import lombok.Setter;
 @Setter
 public class UsuarioCoordinador extends UsuarioGenerico {
 
+   @ManyToOne(targetEntity = Universidad.class)
    private Universidad universidad;
 }

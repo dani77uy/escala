@@ -1,9 +1,11 @@
 package org.grupomontevideo.escala.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,8 +19,10 @@ import lombok.Setter;
 @Setter
 public class Universidad implements Serializable {
 
+   @Id
    private Integer identificador;
+   @ManyToOne(targetEntity = Pais.class, fetch = FetchType.EAGER)
    private Pais pais;
    private String nombre;
-   private List<UsuarioCoordinador> coordinadores;
+
 }
