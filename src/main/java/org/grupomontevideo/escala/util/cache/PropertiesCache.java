@@ -19,15 +19,15 @@ public enum PropertiesCache {
 
    INSTANCE;
 
-   private final LoadingCache<String, Properties> cache;
+   public static final String USER_DIR = System.getProperty("user.dir") + "/config/";
 
-   private static final String USER_DIR = System.getProperty("user.dir") + "/config/";
-
-   private static final String PARAMETERS = USER_DIR + "parameters.properties";
+   private static final String PARAMETERS = USER_DIR + "parametros.properties";
 
    private static final String MENSAJES_ES = USER_DIR + "mensajes_es.properties";
 
    private static final String MYSQL_CONFIG = USER_DIR + "parametros.properties";
+
+   private final LoadingCache<String, Properties> cache;
 
    PropertiesCache() {
       this.cache = CacheBuilder.newBuilder().maximumSize(10).expireAfterAccess(12, HOURS).build(new PropsLoader());
@@ -45,7 +45,7 @@ public enum PropertiesCache {
 
    public String getMySQLProperty(String key) throws ExecutionException {
       Properties properties = cache.get(MYSQL_CONFIG);
-         return properties.getProperty(key);
+      return properties.getProperty(key);
    }
 
    public Properties getMensajesEspanolProperties() throws ExecutionException {
@@ -62,10 +62,11 @@ public enum PropertiesCache {
 
       @Override
       public Properties load(String key) throws Exception {
-         final InputStream input = new FileInputStream(key);
-         final Properties properties = new Properties();
-         properties.load(input);
-         return properties;
+         try (final InputStream input = new FileInputStream(key)) {
+            final Properties properties = new Properties();
+            properties.load(input);
+            return properties;
+         }
       }
    }
 

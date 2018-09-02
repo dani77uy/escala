@@ -21,15 +21,15 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Daniel Baharian
  * @since 3 nov 2017
  */
-@Controller
+//@Controller
 public class AppErrorController implements ErrorController {
+
+   private final static String ERROR_PATH = "/error";
 
    /**
     * Error Attributes in the Application
     */
    private ErrorAttributes errorAttributes;
-
-   private final static String ERROR_PATH = "/error";
 
    /**
     * Controller for the Error Controller
